@@ -10,3 +10,9 @@
     flex-flow: row;
     align-items: center;
 }
+
+@media(max-width: 500px) {
+    .NavigationItems {
+        display: none;
+    }
+}

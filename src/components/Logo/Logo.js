@@ -1,9 +1,9 @@
 import React from 'react';
-import imgLogo from '../../assets/images/logo.svg';
+import imgLogo from '../../assets/images/logo.png';
 import classes from './Logo.module.css';
 
 const logo = (props) => (
-    <div className={classes.Logo}>
+    <div className={classes.Logo} onClick={props.clicked}>
         <img src={imgLogo} alt="Logo"/>
     </div>
 );

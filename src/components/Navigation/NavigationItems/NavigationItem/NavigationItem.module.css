@@ -15,9 +15,9 @@
 }
 
 .NavigationItem a:hover {
-    border-bottom: 4px solid #FF8309;
+    border-bottom: 4px solid #fbff09;
 }
 
 .NavigationItem a.active {
-    color: #FF8309;
+    color: #fbff09;
 }

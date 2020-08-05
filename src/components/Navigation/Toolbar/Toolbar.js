@@ -7,8 +7,8 @@ import classes from './Toolbar.module.css';
 const Toolbar = props => {
     return (
         <header className={classes.Toolbar}>
-            <Logo/>
-            <div style={{height:'100%'}}>
+            <Logo clicked={props.clickLogo}/>
+            <div>
                 <NavigationItems/>
             </div>
         </header>
