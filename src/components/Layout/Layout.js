@@ -8,7 +8,6 @@ const Layout = props => {
     const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
     const toggleSideDrawer = () => {
-        console.log("Clicked");
         setSideDrawerOpen(!sideDrawerOpen);
     }
     return (

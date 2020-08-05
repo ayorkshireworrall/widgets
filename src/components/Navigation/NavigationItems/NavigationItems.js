@@ -4,11 +4,24 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import classes from './NavigationItems.module.css';
 
 const NavigationItems = props => {
+    let navClass = '';
+    switch (props.navType) {
+        case 'SIDE_DRAWER':
+            navClass = classes.NavigationItemsSideDrawer;
+            break;
+        case 'TOOLBAR' :
+            navClass = classes.NavigationItemsToolbar;
+            break;
+        default:
+            throw new Error ('Invalid use of NavigationItems component, must provide valid prop \'navType\'');
+    }
+
     return (
-        <nav className={classes.NavigationItems}>
+        <nav className={navClass}>
             <ul>
-                <NavigationItem link="/home">Home</NavigationItem>
-                <NavigationItem link="/login">Login</NavigationItem>
+                <NavigationItem navType={props.navType} link="/home">Home</NavigationItem>
+                <NavigationItem navType={props.navType} link="/widgets">Widget List</NavigationItem>
+                <NavigationItem navType={props.navType} link="/login">Login</NavigationItem>
             </ul>
         </nav>
     )

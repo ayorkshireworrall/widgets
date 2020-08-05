@@ -9,7 +9,7 @@ const Toolbar = props => {
         <header className={classes.Toolbar}>
             <Logo clicked={props.clickLogo}/>
             <div>
-                <NavigationItems/>
+                <NavigationItems navType='TOOLBAR'/>
             </div>
         </header>
     )

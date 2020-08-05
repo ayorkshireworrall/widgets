@@ -1,8 +1,10 @@
-.NavigationItems {
+.NavigationItemsToolbar {
     height: 100%;
 }
 
-.NavigationItems ul {
+.NavigationItemsToolbar ul {
+    font-size: 20px;
+    color: white;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -12,7 +14,23 @@
 }
 
 @media(max-width: 500px) {
-    .NavigationItems {
+    .NavigationItemsToolbar {
         display: none;
     }
+}
+
+.NavigationItemsSideDrawer {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.NavigationItemsSideDrawer ul {
+    color: black;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
