@@ -8,3 +8,10 @@
 .Logo img {
     height: 100%;
 }
+
+/* Disable click in desktop view */
+@media(min-width: 500px) {
+    .Logo {
+        pointer-events: none;
+    }
+}
