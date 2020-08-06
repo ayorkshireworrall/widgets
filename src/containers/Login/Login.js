@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Page from '../../components/UI/Page/Page';
 import classes from './Login.module.css';
 
 const Login = props => {
+    const [isSignup, setIsSignup] = useState(false);
     const {register, handleSubmit, watch, errors } = useForm();
+
+    const toggleSignup = () => {
+        setIsSignup(!isSignup);
+    }
+
+    let submitText = isSignup ? 'Sign Up' : 'Login';
+    let optionText = isSignup ? 'Have an account? Login' : 'New user? Sign up';
+    let title = isSignup ? 'Sign Up Details' : 'Login Details'
+
     return (
         <Page>
             <div className={classes.Login}>
-                <h1>Login Details</h1>
+                <h1>{title}</h1>
                 <span>Email:</span>
                 <form onSubmit={handleSubmit(() => console.log("Valid Form Submitted"))}>
                     <input 
@@ -34,8 +44,9 @@ const Login = props => {
                             }
                         })}/>
                     <span className={classes.Error}>{errors.password? errors.password.message : ''}</span>
-                    <input type="submit" value="Login"/>
+                    <input type="submit" value={submitText}/>
                 </form>
+                <span className={classes.Signup} onClick={toggleSignup}>{optionText}</span>
             </div>
         </Page>
     )

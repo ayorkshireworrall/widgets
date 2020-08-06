@@ -25,6 +25,7 @@
     min-width: 150px;
     height: 60px;
     color: white;
+    cursor: pointer;
 }
 
 .Login .Error {
@@ -35,6 +36,19 @@
     font-size: 12px;
     color: red;
     margin-left: 0;
+}
+
+.Login .Signup {
+    text-align: center;
+    margin-left: 0;
+    color: #00ccff;
+    font-weight: 700;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.Login .Signup:hover{
+    text-decoration: underline;
 }
 
 .Login span {
@@ -64,5 +78,13 @@
     .Login span {
         height: 20px;
         margin-left: 0;
+    }
+
+    .Login input[type="submit"] {
+        background: linear-gradient(#00ccff, #007E9B);
+        width: 40%;
+        min-width: 150px;
+        height: 50px;
+        color: white;
     }
 }
