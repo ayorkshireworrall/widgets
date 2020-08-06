@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Page from '../../components/UI/Page/Page';
+
 const Home = props => {
     return (
-        <h1>Hey There Sexy!</h1>
+        <Page>
+            <h1>Homepage!</h1>
+        </Page>
     )
 }
 

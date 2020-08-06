@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Page from '../../components/UI/Page/Page';
+
 const Widgets = props => {
     return (
-        <h1>Widget Page!</h1>
+        <Page>
+            <h1>Widget Page!</h1>
+        </Page>
     )
 }
 
