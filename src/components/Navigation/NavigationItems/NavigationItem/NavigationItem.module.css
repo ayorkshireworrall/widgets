@@ -1,3 +1,6 @@
+@value colors: "../../../../css/colors.css";
+@value primary1, primary2, tertiary1 from colors;
+
 .NavigationItemToolbar {
     margin: 10px 0;
     box-sizing: border-box;
@@ -18,11 +21,11 @@
 }
 
 .NavigationItemToolbar a:hover {
-    border-bottom: 4px solid #ffd900;
+    border-bottom: 4px solid tertiary1;
 }
 
 .NavigationItemToolbar a.active {
-    color: #ffd900;
+    color: tertiary1;
 }
 
 .NavigationItemSideDrawer {
@@ -42,6 +45,6 @@
 }
 
 .NavigationItemSideDrawer a.active {
-    color: #ffd900;
-    border-bottom: 2px solid #ffd900;
+    color: tertiary1;
+    border-bottom: 2px solid tertiary1;
 }

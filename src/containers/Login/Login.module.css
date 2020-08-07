@@ -1,3 +1,6 @@
+@value colors: "../../css/colors.css";
+@value primary1, primary2, tertiary1 from colors;
+
 .Login {
     margin: 20px auto;
     box-sizing: border-box;
@@ -20,7 +23,7 @@
 }
 
 .Login input[type="submit"] {
-    background: linear-gradient(#00ccff, #007E9B);
+    background: linear-gradient(primary1, primary2);
     width: 40%;
     min-width: 150px;
     height: 60px;
@@ -31,7 +34,7 @@
 .Login .Boxing {
     text-align: center;
     margin: 0 auto;
-    background: linear-gradient(#00ccff, #007E9B);
+    background: linear-gradient(primary1, primary2);
     width: 40%;
     min-width: 150px;
     height: 60px;
@@ -52,7 +55,7 @@
 .Login .Signup {
     text-align: center;
     margin-left: 0;
-    color: #00ccff;
+    color: primary1;
     font-weight: 700;
     padding-top: 10px;
     cursor: pointer;
@@ -64,7 +67,7 @@
 
 .Login span {
     text-align: left;
-    color: #ffd900;
+    color: tertiary1;
     width: 100%;
     display: inline-block;
     margin-left: 15%;

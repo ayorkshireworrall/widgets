@@ -1,3 +1,6 @@
+@value colors: "../../../css/colors.css";
+@value primary1, primary2, tertiary1 from colors;
+
 .Toolbar {
     height: 64px;
     width:100%;
@@ -8,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: linear-gradient(#00ccff, #007E9B);
+    background: linear-gradient(primary1, primary2);
     box-sizing: border-box;
     padding: 0 20px;
 }

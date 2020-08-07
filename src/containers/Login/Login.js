@@ -76,7 +76,7 @@ const Login = props => {
                     <input 
                         name="email" 
                         ref={register({ 
-                            required: "Enter an email",
+                            required: "Please enter an email",
                             pattern: {
                                 value: /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/,
                                 message: "Please enter a valid email address"
@@ -89,7 +89,7 @@ const Login = props => {
                         name="password" 
                         type="password"
                         ref={register({
-                            required: "Enter a password",
+                            required: "Please enter a password",
                             minLength: {
                                 value: 8,
                                 message: "Password must be at least 8 characters long"
