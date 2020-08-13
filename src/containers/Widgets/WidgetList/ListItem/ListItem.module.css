@@ -1,0 +1,41 @@
+@value colors: "../../../../css/colors.css";
+@value primary1, primary2, tertiary1, danger1, secondary from colors;
+
+.ListItem {
+    display: block;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0 auto;
+    box-sizing: border-box;
+    box-shadow: #ccc 0 2px 5px;
+    max-width: 800px;
+}
+
+.ListItem p {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+}
+
+.ListItem h1 {
+    margin: 0 0 18px 0;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.ListItem button {
+    background-color: secondary;
+    color: danger1;
+    margin: 10px auto;
+    padding: 10px 0;
+    width: 20%;
+    min-width: 120px;
+    font-size: 1.1em;
+    border-radius: 5%;
+}
+
+@media(max-width: 500px) {
+    .ListItem button {
+        width: 80%;
+    }
+}
