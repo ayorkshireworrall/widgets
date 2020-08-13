@@ -4,5 +4,4 @@ export {
     loginFail,
     initiateLogout,
     logoutSuccess,
-    logoutFail,
 } from './auth';

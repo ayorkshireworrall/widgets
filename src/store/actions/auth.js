@@ -9,9 +9,11 @@ export const initiateLogin = (email, password) => {
     }
 }
 
-export const loginSuccess = () => {
+export const loginSuccess = (userId, token) => {
     return {
-        type: actionTypes.LOGIN_SUCCESS
+        type: actionTypes.LOGIN_SUCCESS,
+        userId,
+        token
     }
 }
 
@@ -31,12 +33,5 @@ export const initiateLogout = () => {
 export const logoutSuccess = () => {
     return { 
         type: actionTypes.LOGOUT_SUCCESS
-    }
-}
-
-export const logoutFail = error => {
-    return { 
-        type: actionTypes.LOGOUT_FAIL,
-        error
     }
 }

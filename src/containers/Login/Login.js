@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 
 import Page from '../../components/UI/Page/Page';
 import * as actions from '../../store/actions';
@@ -19,6 +20,10 @@ const Login = props => {
 
     const isLoading = useSelector(state => {
         return state.auth.isLoading;
+    });
+
+    const isAuthenticated = useSelector(state => {
+        return state.auth.token !== null;
     });
 
     let timer = null;
@@ -101,6 +106,7 @@ const Login = props => {
                 </form>
                 <span className={classes.Signup} onClick={toggleSignup}>{optionText}</span>
             </div>
+            {isAuthenticated && <Redirect to="home"/>}
         </Page>
     )
 }
