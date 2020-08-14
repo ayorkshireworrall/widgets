@@ -9,7 +9,8 @@
     margin: 10px 0 auto;
     box-sizing: border-box;
     box-shadow: #ccc 0 2px 5px;
-    max-width: 800px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .ListItem p {
@@ -30,12 +31,26 @@
     padding: 10px 0;
     width: 20%;
     min-width: 120px;
+    max-width: 200px;
     font-size: 1.1em;
-    border-radius: 5%;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 @media(max-width: 500px) {
+    .ListItem {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
     .ListItem button {
         width: 80%;
+        max-width: 80%;
+    }
+}
+
+@media(max-width: 1000px) {
+    .ListItem {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
