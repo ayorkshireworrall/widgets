@@ -1,0 +1,97 @@
+@value colors: "../../../css/colors.css";
+@value primary1, primary2, tertiary1, danger1, secondary from colors;
+
+.WidgetForm {
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: #ccc 0 2px 5px;
+    margin-bottom: 20px;
+}
+
+.WidgetForm h1 {
+    text-align: center;
+    padding: 20px 0 30px 0;
+
+}
+
+.WidgetForm form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.WidgetForm input {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10px;
+    display: inline;
+    text-align: center;
+    height: 40px;
+    font-size: 2em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 0;
+}
+
+.WidgetForm span {
+    margin-left: 10%;
+}
+
+.WidgetForm textarea {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10px;
+    display: inline;
+    text-align: center;
+    font-size: 1.2em;
+    height: 4em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 0;
+    font-family: inherit;
+}
+
+.WidgetForm input[type="submit"] {
+    background: linear-gradient(primary1, primary2);
+    width: 30%;
+    min-width: 150px;
+    max-width: 200px;
+    height: auto;
+    padding: 10px;
+    color: white;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+@media(max-width: 500px) {
+    .WidgetForm {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .WidgetForm input {
+        font-size: 1.5em;
+        height: 1.5em;
+    }
+
+    .WidgetForm input[type="submit"] {
+        background: linear-gradient(primary1, primary2);
+        width: 80%;
+        min-width: 150px;
+        max-width: none;
+        height: 60px;
+        color: white;
+        margin: 20px auto;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 1000px, min-width 501px) {
+    .WidgetForm {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

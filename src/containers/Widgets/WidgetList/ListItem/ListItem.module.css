@@ -48,7 +48,7 @@
     }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1000px, min-width 501px) {
     .ListItem {
         margin-left: 5%;
         margin-right: 5%;
