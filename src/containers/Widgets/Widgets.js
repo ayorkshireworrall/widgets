@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import Page from '../../components/UI/Page/Page';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import WidgetList from './WidgetList/WidgetList';
 import WidgetForm from './WidgetForm/WidgetForm';
 
 const Widgets = props => {
 
-    const [widgets, setWidgets] = useState([
-        {name: 'Alex', description: 'This man is an absolute bloody Legend'},
-        {name: 'Baloo', description: 'This dog is absolutely Adorable'},
-        {name: 'Shirlyn', description: 'This lady is Hot Hot Hot!'}
-    ])
+    const isLoading = useSelector(state => {
+        return state.widgets.loading;
+    });
+
+    const widgets = useSelector(state => {
+        return state.widgets.widgetList;
+    })
+
     return (
         <Page>
+            {console.log("Re render Widgets")}
             <WidgetList widgets={widgets}/>
+            {isLoading && <div style={{paddingTop:'10px', paddingBottom:'20px'}}>
+                    <Spinner color='#000000'/>
+                </div>}
             <WidgetForm/>
         </Page>
     )

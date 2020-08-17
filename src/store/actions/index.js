@@ -5,3 +5,10 @@ export {
     initiateLogout,
     logoutSuccess,
 } from './auth';
+
+export {
+    addWidgetSuccess,
+    removeWidgetSuccess,
+    startAddWidget,
+    startRemoveWidget,
+} from './widgets';

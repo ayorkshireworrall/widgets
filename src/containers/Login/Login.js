@@ -69,7 +69,7 @@ const Login = props => {
         <input type="submit" value={submitText}/>
     )
     if (isLoading) {
-        submit = (<div className={classes.Boxing}><Spinner /></div>);
+        submit = (<div className={classes.Boxing}><Spinner color='#ffffff'/></div>);
     }
 
     return (
