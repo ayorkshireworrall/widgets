@@ -2,7 +2,7 @@ import { takeEvery } from 'redux-saga/effects';
 
 import * as actionTypes from '../actions/actionTypes';
 import { loginSaga, logoutSaga } from './auth';
-import {addWidgetSaga, removeWidgetSaga } from './widgets';
+import {addWidgetSaga, removeWidgetSaga, initWidgetSaga } from './widgets';
 
 export function* watchAuth() {
     yield takeEvery(actionTypes.INITIATE_LOGIN, loginSaga);
@@ -12,4 +12,5 @@ export function* watchAuth() {
 export function* watchWidgets() {
     yield takeEvery(actionTypes.START_ADD_WIDGET, addWidgetSaga);
     yield takeEvery(actionTypes.START_REMOVE_WIDGET, removeWidgetSaga);
+    yield takeEvery(actionTypes.INIT_WIDGETS, initWidgetSaga);
 }

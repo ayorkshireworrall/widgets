@@ -11,4 +11,6 @@ export {
     removeWidgetSuccess,
     startAddWidget,
     startRemoveWidget,
+    initWidgets,
+    setWidgets,
 } from './widgets';

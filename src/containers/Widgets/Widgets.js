@@ -1,10 +1,11 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Page from '../../components/UI/Page/Page';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import WidgetList from './WidgetList/WidgetList';
 import WidgetForm from './WidgetForm/WidgetForm';
+import * as actions from '../../store/actions';
 
 const Widgets = props => {
 
@@ -15,6 +16,13 @@ const Widgets = props => {
     const widgets = useSelector(state => {
         return state.widgets.widgetList;
     })
+
+    const dispatch = useDispatch();
+    const onInitWidgets = useCallback(() => dispatch(actions.initWidgets()), [dispatch]);
+
+    useEffect(() => {
+        onInitWidgets();
+    }, [onInitWidgets]);
 
     return (
         <Page>

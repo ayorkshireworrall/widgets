@@ -26,3 +26,16 @@ export const removeWidgetSuccess = id => {
         id
     }
 }
+
+export const initWidgets = () => {
+    return {
+        type: actionTypes.INIT_WIDGETS
+    }
+}
+
+export const setWidgets = widgets => {
+    return {
+        type: actionTypes.SET_WIDGETS,
+        widgets
+    }
+}

@@ -39,12 +39,20 @@ const removeWidgetSucess = (state, action) => {
     };
 }
 
+const setWidgets = (state, action) => {
+    return {
+        ...state,
+        widgetList: action.widgets
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.START_ADD_WIDGET: return startAddWidget(state, action);
         case actionTypes.START_REMOVE_WIDGET: return startRemoveWidget(state, action);
         case actionTypes.ADD_WIDGET_SUCCESS: return addWidgetSuccess(state, action);
         case actionTypes.REMOVE_WIDGET_SUCCESS: return removeWidgetSucess(state, action);
+        case actionTypes.SET_WIDGETS: return setWidgets(state, action);
         default: return state;
     }
 }
