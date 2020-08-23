@@ -34,7 +34,6 @@ const WidgetForm = props => {
 
     return (
         <div className={classes.WidgetForm}>
-            {console.log("Re render form")}
             <h1>Add a Widget</h1>
             <form onSubmit={e => widgetSubmission(e)}>
                 <span>Name:</span>

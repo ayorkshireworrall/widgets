@@ -1,11 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    widgetList: [
-        {id: 1, name: 'Alex', description: 'This man is an absolute bloody Legend'},
-        {id: 2, name: 'Baloo', description: 'This dog is absolutely Adorable'},
-        {id: 3, name: 'Shirlyn', description: 'This lady is Hot Hot Hot!'}
-    ],
+    widgetList: [],
     loading: false
 }
 
@@ -42,7 +38,15 @@ const removeWidgetSucess = (state, action) => {
 const setWidgets = (state, action) => {
     return {
         ...state,
-        widgetList: action.widgets
+        widgetList: action.widgets,
+        loading: false
+    }
+}
+
+const initWidgets = (state, action) => {
+    return {
+        ...state,
+        loading: true
     }
 }
 
@@ -53,6 +57,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ADD_WIDGET_SUCCESS: return addWidgetSuccess(state, action);
         case actionTypes.REMOVE_WIDGET_SUCCESS: return removeWidgetSucess(state, action);
         case actionTypes.SET_WIDGETS: return setWidgets(state, action);
+        case actionTypes.INIT_WIDGETS: return initWidgets(state, action);
         default: return state;
     }
 }

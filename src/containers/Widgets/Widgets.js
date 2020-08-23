@@ -26,7 +26,6 @@ const Widgets = props => {
 
     return (
         <Page>
-            {console.log("Re render Widgets")}
             <WidgetList widgets={widgets}/>
             {isLoading && <div style={{paddingTop:'10px', paddingBottom:'20px'}}>
                     <Spinner color='#000000'/>

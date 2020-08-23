@@ -3,14 +3,22 @@ import * as actions from '../actions';
 import axios from 'axios';
 
 export function* addWidgetSaga(action) {
-    yield delay(1000);
-    yield put(actions.addWidgetSuccess(action.payload));
+    try {
+        const response = yield axios.put(`${process.env.REACT_APP_API_SERVER_URL}api/v2/widgets/create`, action.payload)
+        yield put(actions.addWidgetSuccess(action.payload));
+    } catch (error) {
+        console.log('Error handling required')
+    }
 
 }
 
 export function* removeWidgetSaga(action) {
-    yield delay(1000);
-    yield put(actions.removeWidgetSuccess(action.id));
+    try {
+        const response = yield axios.delete(`${process.env.REACT_APP_API_SERVER_URL}api/v2/widgets/${action.id}`)
+        yield put(actions.removeWidgetSuccess(action.id));
+    } catch (error) {
+        console.log("Error handling required")
+    }
 }
 
 export function* initWidgetSaga(action) {

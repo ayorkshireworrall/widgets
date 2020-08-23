@@ -8,7 +8,6 @@ const WidgetList = props => {
     return (
         <ul className={classes.WidgetList}>
             {props.widgets.map(widget => {
-                console.log(widget)
             return <ListItem key={widget.id} info={widget}/>
             })}
         </ul>
