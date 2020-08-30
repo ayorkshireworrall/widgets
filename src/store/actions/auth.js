@@ -1,19 +1,17 @@
 import * as actionTypes from './actionTypes';
 
-//TODO switch to JWT tokens
-export const initiateLogin = (email, password) => {
+export const initiateLogin = (username, password) => {
     return {
         type: actionTypes.INITIATE_LOGIN,
-        email,
+        username,
         password
     }
 }
 
-export const loginSuccess = (userId, token) => {
+export const loginSuccess = accessToken => {
     return {
         type: actionTypes.LOGIN_SUCCESS,
-        userId,
-        token
+        accessToken
     }
 }
 

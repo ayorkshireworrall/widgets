@@ -13,20 +13,26 @@ function App() {
     return state.auth.token !== null;
   });
 
-  const routes = isAuthenticated ? (
+  let routes = (
     <Switch>
       <Route path="/home" component={Home}/>
       <Route path="/logout" component={Logout}/>
       <Route path="/widgets" component={Widgets}/>
       <Redirect to="home" />
     </Switch>
-  ) : (
-    <Switch>
-      <Route path="/home" component={Home}/>
-      <Route path="/login" component={Login}/>
-      <Redirect to="login" />
-    </Switch>
   );
+
+  if (!isAuthenticated) {
+    //try refresh
+    //show unauthenticated routes
+    routes = (
+      <Switch>
+        <Route path="/home" component={Home}/>
+        <Route path="/login" component={Login}/>
+        <Redirect to="login" />
+      </Switch>
+    );
+  }
   
   return (
     <BrowserRouter>

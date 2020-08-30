@@ -82,10 +82,10 @@ const Login = props => {
                         name="email" 
                         ref={register({ 
                             required: "Please enter an email",
-                            pattern: {
-                                value: /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/,
-                                message: "Please enter a valid email address"
-                            },
+                            // pattern: {
+                            //     value: /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/,
+                            //     message: "Please enter a valid email address"
+                            // },
                         })}
                         onChange={event => handleInputChange(event, 'email')}/>
                     <span className={classes.Error}>{errors.email? errors.email.message : ''}</span>

@@ -28,8 +28,7 @@ const loginSuccess = (state, action) => {
     return {
         ...state,
         isLoading: false,
-        token: action.token,
-        userId: action.userId
+        token: action.accessToken
     }
 }
 
