@@ -14,7 +14,7 @@ export function* loginSaga(action) {
         password: action.password
     }
     try {
-        const response = yield axios.post(`${process.env.REACT_APP_API_SERVER_URL}api/token/`, data);
+        const response = yield axios.post(`/api/token/`, data);
         console.log(response);
         yield put(actions.loginSuccess(response.data.access));
     } catch (error) {
