@@ -3,8 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     payload: null,
     isLoading: false,
-    // token: null, TODO re-enable this!!
-    token: true,
+    token: null,
     userId: 0,
     errors: null
 }
