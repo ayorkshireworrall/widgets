@@ -4,6 +4,7 @@ export {
     loginFail,
     initiateLogout,
     logoutSuccess,
+    attemptRefresh,
 } from './auth';
 
 export {

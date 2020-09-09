@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector} from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
 
 import Layout from './components/Layout/Layout';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Logout from './containers/Login/Logout/Logout';
 import Widgets from './containers/Widgets/Widgets';
+import * as actions from './store/actions'
 
 function App() {
   const isAuthenticated = useSelector(state => {
     return state.auth.token !== null;
   });
+
+  const dispatch = useDispatch();
+  //TODO this process is a little clunky
+  useEffect(() => {
+    if (!isAuthenticated) {
+      dispatch(actions.attemptRefresh());
+    }
+  }, [dispatch])
+
 
   let routes = (
     <Switch>

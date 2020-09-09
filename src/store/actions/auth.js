@@ -33,3 +33,9 @@ export const logoutSuccess = () => {
         type: actionTypes.LOGOUT_SUCCESS
     }
 }
+
+export const attemptRefresh = () => {
+    return {
+        type: actionTypes.ATTEMPT_REFRESH
+    }
+}

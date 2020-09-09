@@ -4,10 +4,14 @@ import axios from 'axios';
 import * as actions from '../actions';
 
 export function* logoutSaga(action) {
-    yield actions.logoutSuccess();
+    try {
+        const response = yield axios.get('/api/logout');
+        yield actions.logoutSuccess();
+    } catch (error) {
+        console.log('Error handling required')
+    }
 }
 
-//TODO: replace with connection to actual backend to retrieve auth token
 export function* loginSaga(action) {
     const data = {
         username: action.username,
@@ -19,5 +23,15 @@ export function* loginSaga(action) {
         yield put(actions.loginSuccess(response.data.access));
     } catch (error) {
         yield put(actions.loginFail(error));
+    }
+}
+
+export function* refreshSaga(action) {
+    try {
+        const response = yield axios.get('/api/token/refresh');
+        axios.defaults.headers['Authorization'] = `Bearer ${response.data.access}`;
+        yield put(actions.loginSuccess(response.data.access));
+    } catch (error) {
+        yield put(actions.loginFail(error))
     }
 }
