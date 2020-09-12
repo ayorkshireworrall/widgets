@@ -13,9 +13,9 @@ function App() {
   const isAuthenticated = useSelector(state => {
     return state.auth.token !== null;
   });
+  const isLoading = useSelector(state => state.auth.isLoading)
 
   const dispatch = useDispatch();
-  //TODO this process is a little clunky
   useEffect(() => {
     if (!isAuthenticated) {
       dispatch(actions.attemptRefresh());
@@ -47,7 +47,7 @@ function App() {
   return (
     <BrowserRouter>
       <Layout>
-        {routes}
+        {isLoading ? (<p>Loading</p>) : routes}
       </Layout>
     </BrowserRouter>
   );

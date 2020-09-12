@@ -28,6 +28,7 @@ export function* loginSaga(action) {
 
 export function* refreshSaga(action) {
     try {
+        yield put(actions.initiateRefresh())
         const response = yield axios.get('/api/token/refresh');
         axios.defaults.headers['Authorization'] = `Bearer ${response.data.access}`;
         yield put(actions.loginSuccess(response.data.access));

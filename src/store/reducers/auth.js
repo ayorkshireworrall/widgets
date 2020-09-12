@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     payload: null,
-    isLoading: false,
+    isLoading: true,
     token: null,
     userId: 0,
     errors: null
@@ -46,6 +46,13 @@ const initiateLogout = (state, action) => {
     }
 }
 
+const initiateRefresh = (state, action) => {
+    return {
+        ...state,
+        isLoading: true,
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -54,6 +61,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.LOGIN_SUCCESS: return loginSuccess(state, action);
         case actionTypes.LOGIN_FAIL: return loginFail(state, action);
         case actionTypes.INITIATE_LOGOUT: return initiateLogout(state, action);
+        case actionTypes.INITIATE_REFRESH: return initiateRefresh(state, action);
         default: return state;
     }
 }

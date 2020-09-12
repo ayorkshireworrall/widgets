@@ -5,6 +5,7 @@ export {
     initiateLogout,
     logoutSuccess,
     attemptRefresh,
+    initiateRefresh
 } from './auth';
 
 export {

@@ -7,6 +7,7 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT_FAIL = 'LOGOUT_FAIL';
 export const ATTEMPT_REFRESH = 'ATTEMPT_REFRESH';
+export const INITIATE_REFRESH = 'INITIATE_REFRESH';
 
 //Widget action types
 export const START_ADD_WIDGET = 'START_ADD_WIDGET';

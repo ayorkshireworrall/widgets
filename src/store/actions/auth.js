@@ -39,3 +39,9 @@ export const attemptRefresh = () => {
         type: actionTypes.ATTEMPT_REFRESH
     }
 }
+
+export const initiateRefresh = () => {
+    return {
+        type: actionTypes.INITIATE_REFRESH
+    }
+}
