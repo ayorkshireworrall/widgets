@@ -33,6 +33,7 @@ export function* refreshSaga(action) {
         axios.defaults.headers['Authorization'] = `Bearer ${response.data.access}`;
         yield put(actions.loginSuccess(response.data.access));
     } catch (error) {
-        yield put(actions.loginFail(error))
+        //This is silent but will turn loading to false
+        yield put(actions.refreshFail());
     }
 }

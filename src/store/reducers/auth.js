@@ -53,6 +53,13 @@ const initiateRefresh = (state, action) => {
     }
 }
 
+const refreshFail = (state, action) => {
+    return {
+        ...state,
+        isLoading: false
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -62,6 +69,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.LOGIN_FAIL: return loginFail(state, action);
         case actionTypes.INITIATE_LOGOUT: return initiateLogout(state, action);
         case actionTypes.INITIATE_REFRESH: return initiateRefresh(state, action);
+        case actionTypes.REFRESH_FAIL: return refreshFail(state, action);
         default: return state;
     }
 }

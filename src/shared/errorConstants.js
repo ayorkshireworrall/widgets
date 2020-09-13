@@ -3,5 +3,6 @@ export const TYPE = {
 }
 
 export const MESSAGE = {
-    401: 'Unauthorized'
+    401: 'Unauthorized',
+    403: 'Invalid username and password entered'
 }

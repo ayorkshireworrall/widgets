@@ -7,6 +7,7 @@ import Page from '../../components/UI/Page/Page';
 import * as actions from '../../store/actions';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Login.module.css';
+import { MESSAGE } from '../../shared/errorConstants';
 
 const Login = props => {
     const [isSignup, setIsSignup] = useState(false);
@@ -21,6 +22,9 @@ const Login = props => {
     const isLoading = useSelector(state => {
         return state.auth.isLoading;
     });
+
+    const authErrors = useSelector(state => state.auth.errors);
+    const authErrorMessage = authErrors && MESSAGE[authErrors.response.status]? MESSAGE[authErrors.response.status] : 'An unspecified error occurred';
 
     const isAuthenticated = useSelector(state => {
         return state.auth.token !== null;
@@ -67,6 +71,8 @@ const Login = props => {
         submit = (<div className={classes.Boxing}><Spinner color='#ffffff'/></div>);
     }
 
+    const userErrors = errors.email ? errors.email.message : authErrors? authErrorMessage : '';
+
     return (
         <Page>
             <div className={classes.Login}>
@@ -83,7 +89,7 @@ const Login = props => {
                             // },
                         })}
                         onChange={event => handleInputChange(event, 'email')}/>
-                    <span className={classes.Error}>{errors.email? errors.email.message : ''}</span>
+                    <span className={classes.Error}>{userErrors}</span>
                     <span>Password:</span>
                     <input 
                         name="password" 

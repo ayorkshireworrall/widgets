@@ -45,3 +45,9 @@ export const initiateRefresh = () => {
         type: actionTypes.INITIATE_REFRESH
     }
 }
+
+export const refreshFail = () => {
+    return {
+        type: actionTypes.REFRESH_FAIL
+    }
+}
