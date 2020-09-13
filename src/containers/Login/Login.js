@@ -45,17 +45,12 @@ const Login = props => {
     }
 
     const handleInputChange = (event, identifier) => {
-        window.clearTimeout(timer);
         let inputValue = event.target.value;
-        timer = setTimeout(() => {
-            if (inputValue !== formValues[identifier]) {
-                const newFormValues = {
-                    ...formValues,
-                    [identifier]: inputValue 
-                }
-                setFormValues(newFormValues);
-            }
-        }, 500);
+        const newFormValues = {
+            ...formValues,
+            [identifier]: inputValue 
+        }
+        setFormValues(newFormValues);
     }
 
     const toggleSignup = () => {
@@ -76,7 +71,7 @@ const Login = props => {
         <Page>
             <div className={classes.Login}>
                 <h1>{title}</h1>
-                <span>Email:</span>
+                <span>Username/Email:</span>
                 <form onSubmit={handleSubmit(() => onSubmit())}>
                     <input 
                         name="email" 
