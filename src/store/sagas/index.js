@@ -7,7 +7,7 @@ import {addWidgetSaga, removeWidgetSaga, initWidgetSaga } from './widgets';
 export function* watchAuth() {
     yield takeEvery(actionTypes.ATTEMPT_REFRESH, refreshSaga);
     yield takeEvery(actionTypes.INITIATE_LOGIN, loginSaga);
-    yield takeEvery(actionTypes.INITIATE_LOGOUT, logoutSaga);
+    // yield takeEvery(actionTypes.INITIATE_LOGOUT, logoutSaga);
 }
 
 export function* watchWidgets() {

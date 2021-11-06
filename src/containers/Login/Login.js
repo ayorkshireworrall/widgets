@@ -75,7 +75,7 @@ const Login = props => {
 
     return (
         <Page>
-            <div className={classes.Login}>
+            <div className={`${classes.Login}`}>
                 <h1>{title}</h1>
                 <span>Username/Email:</span>
                 <form onSubmit={handleSubmit(() => onSubmit())}>

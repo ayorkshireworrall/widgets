@@ -18,9 +18,9 @@ export function* loginSaga(action) {
         password: action.password
     }
     try {
-        const response = yield axios.post(`/api/token/`, data);
-        axios.defaults.headers['Authorization'] = `Bearer ${response.data.access}`;
-        yield put(actions.loginSuccess(response.data.access));
+        const response = yield axios.post(`/authenticate`, data);
+        axios.defaults.headers['Authorization'] = `Bearer ${response.data.token}`;
+        yield put(actions.loginSuccess(response.data.token));
     } catch (error) {
         yield put(actions.loginFail(error));
     }
