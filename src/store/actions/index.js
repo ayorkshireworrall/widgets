@@ -7,6 +7,7 @@ export {
     attemptRefresh,
     initiateRefresh,
     refreshFail,
+    clearAuthErrors,
 } from './auth';
 
 export {

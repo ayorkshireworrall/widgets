@@ -9,6 +9,7 @@ export const LOGOUT_FAIL = 'LOGOUT_FAIL';
 export const ATTEMPT_REFRESH = 'ATTEMPT_REFRESH';
 export const INITIATE_REFRESH = 'INITIATE_REFRESH';
 export const REFRESH_FAIL = 'REFRESH_FAIL';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 //Widget action types
 export const START_ADD_WIDGET = 'START_ADD_WIDGET';

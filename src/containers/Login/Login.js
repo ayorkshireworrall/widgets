@@ -8,6 +8,7 @@ import * as actions from '../../store/actions';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Login.module.css';
 import { MESSAGE } from '../../shared/errorConstants';
+import SocialLogin from './SocialLogin/SocialLogin';
 
 const Login = props => {
     const [isSignup, setIsSignup] = useState(false);
@@ -40,6 +41,10 @@ const Login = props => {
         console.log('TODO: Implement sign up');
     }
 
+    const clearLoginErrors = () => {
+        dispatch(actions.clearAuthErrors())
+    }
+
     const onSubmit = () => {
         if (isSignup) {
             signupSubmission();
@@ -49,6 +54,7 @@ const Login = props => {
     }
 
     const handleInputChange = (event, identifier) => {
+        clearLoginErrors()
         let inputValue = event.target.value;
         const newFormValues = {
             ...formValues,
@@ -63,7 +69,7 @@ const Login = props => {
 
     let submitText = isSignup ? 'Sign Up' : 'Login';
     let optionText = isSignup ? 'Have an account? Login' : 'New user? Sign up';
-    let title = isSignup ? 'Sign Up Details' : 'Login Details';
+    let title = isSignup ? 'Sign Up' : 'Login';
     let submit = (
         <input type="submit" value={submitText}/>
     )
@@ -71,15 +77,23 @@ const Login = props => {
         submit = (<div className={classes.Boxing}><Spinner color='#ffffff'/></div>);
     }
 
+    const socialLogin = (
+        <div className={!isSignup ? '' : classes.hidden}>
+            <SocialLogin/>
+            <h3>Or login with email or username</h3>
+        </div>
+    )
+
     const userErrors = errors.email ? errors.email.message : authErrors? authErrorMessage : '';
 
     return (
         <Page>
             <div className={`${classes.Login}`}>
                 <h1>{title}</h1>
-                <span>Username/Email:</span>
+                {socialLogin}
                 <form onSubmit={handleSubmit(() => onSubmit())}>
                     <input 
+                        placeholder="Username/Email"
                         name="email" 
                         ref={register({ 
                             required: "Please enter an email",
@@ -90,8 +104,8 @@ const Login = props => {
                         })}
                         onChange={event => handleInputChange(event, 'email')}/>
                     <span className={classes.Error}>{userErrors}</span>
-                    <span>Password:</span>
                     <input 
+                        placeholder="Password"
                         name="password" 
                         type="password"
                         ref={register({

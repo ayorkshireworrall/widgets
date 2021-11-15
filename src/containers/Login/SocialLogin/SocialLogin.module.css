@@ -1,0 +1,55 @@
+@value colors: "../../../css/colors.css";
+@value primary1, primary2, tertiary1, tertiary2 from colors;
+
+.Container {
+    margin: auto;
+    width: 70%;
+}
+
+.Button img {
+    max-height: 24px;
+}
+
+.Button {
+    position: inherit;
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    text-align: center;
+    height: 20px;
+    padding: 6px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.Button img {
+    float: left;
+}
+
+.Button span {
+    text-align: center;
+    margin-left: 0px;
+}
+
+.Facebook {
+    background-color: #45619d;
+}
+
+.Facebook span {
+    color: #fff;
+}
+
+.Google {
+    background-color: rgb(236, 236, 236);
+}
+
+.Google span {
+    color: #000
+}
+
+@media(max-width:500px) {
+    .Container {
+        width: 100%;
+    }
+}

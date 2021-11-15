@@ -51,3 +51,9 @@ export const refreshFail = () => {
         type: actionTypes.REFRESH_FAIL
     }
 }
+
+export const clearAuthErrors = () => {
+    return {
+        type: actionTypes.CLEAR_ERRORS
+    }
+}

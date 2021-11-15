@@ -1,15 +1,16 @@
 @value colors: "../../css/colors.css";
-@value primary1, primary2, tertiary1 from colors;
+@value primary1, primary2, tertiary1, tertiary2 from colors;
 
 .Login {
     margin: 20px auto;
     box-sizing: border-box;
     text-align: center;
     padding:20px;
-    width: 80%;
+    width: 40%;
     min-width: 500px;
     max-width: 720px;
     box-shadow: 0 2px 4px #ccc;
+    
 }
 
 .Login input {
@@ -20,13 +21,14 @@
     font-size: 20px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    background-color: rgb(236, 236, 236);
 }
 
 .Login input[type="submit"] {
     background: linear-gradient(primary1, primary2);
     width: 40%;
     min-width: 150px;
-    height: 60px;
+    height: 40px;
     color: white;
     cursor: pointer;
 }
@@ -37,7 +39,7 @@
     background: linear-gradient(primary1, primary2);
     width: 40%;
     min-width: 150px;
-    height: 60px;
+    height: 40px;
     color: white;
     cursor: not-allowed;
 }
@@ -77,6 +79,10 @@
     margin-bottom: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 @media(max-width:500px) {
     .Login {
         width: 100%;
@@ -95,7 +101,7 @@
     }
 
     .Login input[type="submit"] {
-        height: 50px;
+        height: 40px;
     }
 
     .Login .Boxing {

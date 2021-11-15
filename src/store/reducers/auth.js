@@ -60,6 +60,13 @@ const refreshFail = (state, action) => {
     }
 }
 
+const clearAuthErrors = (state, action) => {
+    return {
+        ...state,
+        errors: null
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -70,6 +77,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.INITIATE_LOGOUT: return initiateLogout(state, action);
         case actionTypes.INITIATE_REFRESH: return initiateRefresh(state, action);
         case actionTypes.REFRESH_FAIL: return refreshFail(state, action);
+        case actionTypes.CLEAR_ERRORS: return clearAuthErrors(state, action);
         default: return state;
     }
 }
