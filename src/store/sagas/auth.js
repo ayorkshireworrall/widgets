@@ -37,3 +37,12 @@ export function* refreshSaga(action) {
         yield put(actions.refreshFail());
     }
 }
+
+export function* socialLoginSaga(action) {
+    try {
+        const response = yield axios.get(action.authUrl);
+        yield put(actions.socialLoginSuccess())
+    } catch (error) {
+        yield put(actions.socialLoginFail(error))
+    }
+}

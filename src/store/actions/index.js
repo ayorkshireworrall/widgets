@@ -8,6 +8,9 @@ export {
     initiateRefresh,
     refreshFail,
     clearAuthErrors,
+    initiateSocialLogin,
+    socialLoginSuccess,
+    socialLoginFail,
 } from './auth';
 
 export {

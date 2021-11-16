@@ -25,7 +25,7 @@ const Login = props => {
     });
 
     const authErrors = useSelector(state => state.auth.errors);
-    const authErrorMessage = authErrors && MESSAGE[authErrors.response.status]? MESSAGE[authErrors.response.status] : 'An unspecified error occurred';
+    const authErrorMessage = authErrors && authErrors.response && MESSAGE[authErrors.response.status]? MESSAGE[authErrors.response.status] : 'An unspecified error occurred';
 
     const isAuthenticated = useSelector(state => {
         return state.auth.token !== null;

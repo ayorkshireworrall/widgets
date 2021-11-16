@@ -67,6 +67,28 @@ const clearAuthErrors = (state, action) => {
     }
 }
 
+const initiateSocialLogin = (state, action) => {
+    return {
+        ...state,
+        isLoading: true
+    }
+}
+
+const socialLoginSuccess = (state, action) => {
+    return {
+        ...state,
+        isLoading: false
+    }
+}
+
+const socialLoginFail = (state, action) => {
+    return {
+        ...state,
+        isLoading: false,
+        errors: action.error
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -78,6 +100,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.INITIATE_REFRESH: return initiateRefresh(state, action);
         case actionTypes.REFRESH_FAIL: return refreshFail(state, action);
         case actionTypes.CLEAR_ERRORS: return clearAuthErrors(state, action);
+        case actionTypes.INITIATE_SOCIAL_LOGIN: return initiateSocialLogin(state, action);
+        case actionTypes.SOCIAL_LOGIN_SUCCESS: return socialLoginSuccess(state, action);
+        case actionTypes.SOCIAL_LOGIN_FAIL: return socialLoginFail(state, action);
         default: return state;
     }
 }

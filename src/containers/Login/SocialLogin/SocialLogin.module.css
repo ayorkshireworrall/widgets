@@ -36,12 +36,20 @@
     background-color: #45619d;
 }
 
+.Facebook:hover {
+    background-color: #163a88;
+}
+
 .Facebook span {
     color: #fff;
 }
 
 .Google {
     background-color: rgb(236, 236, 236);
+}
+
+.Google:hover {
+    background-color: rgb(222, 222, 222);
 }
 
 .Google span {

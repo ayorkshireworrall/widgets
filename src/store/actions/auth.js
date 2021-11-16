@@ -57,3 +57,23 @@ export const clearAuthErrors = () => {
         type: actionTypes.CLEAR_ERRORS
     }
 }
+
+export const initiateSocialLogin = authUrl => {
+    return {
+        type: actionTypes.INITIATE_SOCIAL_LOGIN,
+        authUrl: authUrl
+    }
+}
+
+export const socialLoginSuccess = () => {
+    return {
+        type: actionTypes.SOCIAL_LOGIN_SUCCESS
+    }
+}
+
+export const socialLoginFail = error => {
+    return {
+        type: actionTypes.SOCIAL_LOGIN_FAIL,
+        error
+    }
+}
